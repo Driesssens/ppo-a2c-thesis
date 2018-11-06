@@ -46,7 +46,7 @@ def get_logger(model_dir):
         level=logging.INFO,
         format="%(message)s",
         handlers=[
-            logging.FileHandler(filename=path),
+            logging.FileHandler(filename=path, encoding='utf-8'),
             logging.StreamHandler(sys.stdout)
         ]
     )

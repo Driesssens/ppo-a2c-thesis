@@ -38,7 +38,7 @@ class ObssPreprocessor:
         self.vocab = Vocabulary(model_dir)
         self.obs_space = {
             "image": obs_space.spaces['image'].shape,
-            "instr": self.vocab.max_size
+            # "instr": self.vocab.max_size
         }
 
     def __call__(self, obss, device=None):
