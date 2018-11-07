@@ -152,7 +152,6 @@ class BaseAlgo(ABC):
             action = dist.sample()
 
             obs, reward, done, _ = self.env.step(action.cpu().numpy())
-
             # Update experiences values
 
             self.obss[i] = self.obs

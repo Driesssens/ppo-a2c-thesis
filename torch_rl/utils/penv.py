@@ -1,6 +1,7 @@
 from multiprocessing import Process, Pipe
 import gym
 
+
 def worker(conn, env):
     while True:
         cmd, data = conn.recv()
@@ -14,6 +15,7 @@ def worker(conn, env):
             conn.send(obs)
         else:
             raise NotImplementedError
+
 
 class ParallelEnv(gym.Env):
     """A concurrent execution of environments in multiple processes."""

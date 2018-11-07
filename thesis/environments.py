@@ -1,7 +1,7 @@
 from gym_minigrid.minigrid import *
 
 
-class ShapedUnlock(MiniGridEnv):
+class SmallUnlock(MiniGridEnv):
 
     def __init__(self, size=7):
         super().__init__(

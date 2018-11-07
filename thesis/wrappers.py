@@ -91,7 +91,7 @@ class MyFullyObservableWrapperBroadcast(gym.core.ObservationWrapper):
 
 
 class MyFullyObservableWrapperEgo(gym.core.ObservationWrapper):
-    name = "FullyEgo"
+    name = "Ego"
 
     def __init__(self, env):
         super().__init__(env)
@@ -118,7 +118,7 @@ class MyFullyObservableWrapperEgo(gym.core.ObservationWrapper):
 
 
 class ReducedActionWrapper(gym.core.Wrapper):
-    name = "Red"
+    name = "ActRed"
 
     class Actions(IntEnum):
         # Turn left, turn right, move forward
@@ -155,3 +155,36 @@ class ReducedActionWrapper(gym.core.Wrapper):
             else:
                 # print("from {} to {}".format(action, self.unwrapped.actions.toggle))
                 return self.env.step(self.unwrapped.actions.toggle)
+
+
+class UndiscountedRewards(gym.core.RewardWrapper):
+    name = "Undis"
+
+    def __init__(self, env):
+        super().__init__(env)
+
+    def step(self, action):
+        observation, reward, done, info = self.env.step(action)
+        if done:
+            reward = 1
+        else:
+            reward = 0
+            # reward = -(1 / self.unwrapped.max_steps)
+
+        return observation, reward, done, info
+
+
+class HastyRewards(gym.core.RewardWrapper):
+    name = "Haste"
+
+    def __init__(self, env):
+        super().__init__(env)
+
+    def step(self, action):
+        observation, reward, done, info = self.env.step(action)
+        if done:
+            reward = 1
+        else:
+            reward = -(1 / self.unwrapped.max_steps)
+
+        return observation, reward, done, info

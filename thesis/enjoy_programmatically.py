@@ -10,8 +10,8 @@ except ImportError:
     pass
 
 import utils
-from thesis.environments import ShapedUnlock
-from thesis.wrappers import MyFullyObservableWrapperBroadcast, MyFullyObservableWrapper, MyFullyObservableWrapperEgo, ReducedActionWrapper
+from thesis.environments import SmallUnlock
+from thesis.wrappers import MyFullyObservableWrapperBroadcast, MyFullyObservableWrapper, MyFullyObservableWrapperEgo, ReducedActionWrapper, UndiscountedRewards
 
 
 def enjoy(environment, model, seed=0, argmax=False, pause=0.1):
@@ -58,8 +58,8 @@ def enjoy_unlock():
 
 
 def enjoy_wrapped():
-    environment_class = ReducedActionWrapper(MyFullyObservableWrapperEgo(ShapedUnlock()))
-    enjoy(environment_class, "Red-FullyEgo-ShapedUnlock_A2CAlgo_seed1_18-11-06-11-39-47")
+    environment_class = UndiscountedRewards(MyFullyObservableWrapperEgo(SmallUnlock()))
+    enjoy(environment_class, "A2C_Undis-Ego-SmallUnlock_s1_18-11-07-18-22-10")
 
 
 enjoy_wrapped()

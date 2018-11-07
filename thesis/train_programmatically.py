@@ -22,7 +22,6 @@ from model import ACModel
 
 def train(environment,  # name of the environment to train on (REQUIRED)
           algorithm,  # class
-          model_name=None,  # name of the model (default: {ENV}_{ALGO}_{TIME})
           seed=1,  # random seed (default: 1)
           procs=16,  # number of processes (default: 16)
           frames=10 ** 7,  # number of frames of training (default: 10e7)
@@ -46,16 +45,14 @@ def train(environment,  # name of the environment to train on (REQUIRED)
           note=None, # name suffix
           tensorboard=True):
     saved_arguments = locals()
-    suffix = datetime.datetime.now().strftime("%y-%m-%d-%H-%M-%S")
 
-    if note is not None:
-        suffix += "-" + note
+    date_suffix = datetime.datetime.now().strftime("%y-%m-%d-%H-%M-%S")
+    note = note + "_" if note else ""
 
-    actual_model_name = model_name or "{}_{}_seed{}_{}".format(environment_name(environment), algorithm.__class__.__name__, seed, suffix)
-    model_dir = utils.get_model_dir(actual_model_name)
+    model_name = "A2C_{}{}_s{}_{}".format(note, environment_name(environment), seed, date_suffix)
+    model_dir = utils.get_model_dir(model_name)
 
     # Define logger, CSV writer and Tensorboard writer
-
     logger = utils.get_logger(model_dir)
     csv_file, csv_writer = utils.get_csv_writer(model_dir)
 
@@ -64,16 +61,12 @@ def train(environment,  # name of the environment to train on (REQUIRED)
         tb_writer = SummaryWriter(model_dir)
 
     # Log command and all script arguments
-
-    logger.info("{}\n".format(" ".join(sys.argv)))
     logger.info("{}\n".format(saved_arguments))
 
     # Set seed for all randomness sources
-
     utils.seed(seed)
 
     # Load training status
-
     try:
         status = utils.load_status(model_dir)
     except OSError:

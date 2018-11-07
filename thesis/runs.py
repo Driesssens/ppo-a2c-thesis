@@ -1,8 +1,9 @@
 from torch_rl import A2CAlgo
-from gym_minigrid.envs import EmptyEnv, EmptyEnv16x16, Unlock, UnlockPickup
+from gym_minigrid.envs import EmptyEnv6x6, EmptyEnv10x10, EmptyEnv16x16, Unlock, UnlockPickup
 from thesis.train_programmatically import train
-from thesis.wrappers import MyFullyObservableWrapper, MyFullyObservableWrapperBroadcast, MyFullyObservableWrapperEgo, ReducedActionWrapper
-from thesis.environments import ShapedUnlock
+from thesis.wrappers import MyFullyObservableWrapper, MyFullyObservableWrapperBroadcast, MyFullyObservableWrapperEgo, ReducedActionWrapper, UndiscountedRewards, HastyRewards
+from thesis.environments import SmallUnlock
+from thesis.environment_model import EnvironmentModel, train_environment_model
 
 
 def first_test_run():
@@ -35,5 +36,18 @@ def reduced_action():
     train(environment_class, algorithm, tensorboard=True)
 
 
+def rewards():
+    environment_class = [EmptyEnv, MyFullyObservableWrapperEgo, UndiscountedRewards]
+    algorithm = A2CAlgo(environment_class, n_processes=16)
+    train(environment_class, algorithm, tensorboard=True, note="NoNegativeRewards")
+
+
+def create_some_pretrained_agents():
+    environment_class = [SmallUnlock, MyFullyObservableWrapperEgo]
+    # environment_class = [EmptyEnv10x10, MyFullyObservableWrapperEgo]
+    algorithm = A2CAlgo(environment_class, n_processes=16)
+    train(environment_class, algorithm, tensorboard=True, no_mem=True)
+
+
 if __name__ == '__main__':
-    reduced_action()
+    create_some_pretrained_agents()
