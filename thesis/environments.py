@@ -1,9 +1,9 @@
 from gym_minigrid.minigrid import *
 
 
-class SmallUnlock(MiniGridEnv):
+class SmallUnlock8x8(MiniGridEnv):
 
-    def __init__(self, size=7):
+    def __init__(self, size=8):
         super().__init__(
             grid_size=size,
             max_steps=8 * size * size,
@@ -17,18 +17,17 @@ class SmallUnlock(MiniGridEnv):
 
         # Generate the surrounding walls
         self.grid.wall_rect(0, 0, width, height)
-        self.grid.vert_wall(1, 0, height)
-        self.grid.horz_wall(0, 1, width)
+        self.grid.wall_rect(1, 1, width-2, height-2)
 
         # Place the agent in the top-left corner
         self.start_pos = (2, 2)
         self.start_dir = 0
 
         self.key = Key()
-        door_y = self._rand_int(2, height-1)
+        door_y = self._rand_int(3, height-2)
         self.place_obj(self.key)
         self.door = LockedDoor(color=self.key.color)
-        self.grid.set(width-1, door_y, self.door)
+        self.grid.set(width-2, door_y, self.door)
         self.picked_up_key = False
 
         self.mission = ""

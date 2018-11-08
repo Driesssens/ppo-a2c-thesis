@@ -11,7 +11,7 @@ except ImportError:
 
 import utils
 from thesis.environments import SmallUnlock
-from thesis.wrappers import MyFullyObservableWrapperBroadcast, MyFullyObservableWrapper, MyFullyObservableWrapperEgo, ReducedActionWrapper, UndiscountedRewards
+from thesis.wrappers import MyFullyObservableWrapperBroadcast, MyFullyObservableWrapper, MyFullyObservableWrapperEgo, ReducedActionWrapper, UndiscountedRewards, HastyRewards
 
 
 def enjoy(environment, model, seed=0, argmax=False, pause=0.1):
@@ -58,8 +58,8 @@ def enjoy_unlock():
 
 
 def enjoy_wrapped():
-    environment_class = UndiscountedRewards(MyFullyObservableWrapperEgo(SmallUnlock()))
-    enjoy(environment_class, "A2C_Undis-Ego-SmallUnlock_s1_18-11-07-18-22-10")
+    environment_class = HastyRewards(MyFullyObservableWrapperEgo(SmallUnlock()))
+    enjoy(environment_class, "A2C_NoMem8x8_Haste-Ego-SmallUnlock_s1_18-11-07-21-56-42")
 
 
 enjoy_wrapped()

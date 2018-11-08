@@ -10,7 +10,7 @@ from thesis.wrappers import environment_name
 import time
 
 
-def train_environment_model(environment_class, agent_name, n_environments=16, seed=0, learning_rate=5e-4, batch_per_environment=4, observation_weight=10, reward_weight=1, note=None, tensorboard=True, train_for_n_frames=None, log_interval=1, store_interval=10):
+def train_environment_model(environment_class, agent_name, n_environments=16, seed=0, learning_rate=5e-4, batch_per_environment=4, observation_weight=1, reward_weight=1, note=None, tensorboard=True, train_for_n_frames=None, log_interval=1, store_interval=10):
     saved_arguments = locals()
 
     date_suffix = datetime.datetime.now().strftime("%y-%m-%d-%H-%M-%S")
@@ -57,24 +57,27 @@ def train_environment_model(environment_class, agent_name, n_environments=16, se
         batch_start_time = time.time()
 
         old_observation_batch = torch.Tensor()
-        action_batch = torch.Tensor()
-        new_observation_batch = torch.IntTensor()
+        action_batch = torch.LongTensor()
+        new_observation_batch = torch.Tensor()
         reward_batch = torch.Tensor()
 
         for batch in range(batch_per_environment):
-            distributions, _ = agent_model(observation_preprocessor(last_observations))
+            distributions, _, _ = agent_model(observation_preprocessor(last_observations), memory=None)
             actions = distributions.sample()
-            new_observations, rewards, _ = environments.step(actions.numpy())
+            new_observations, rewards, _, _ = environments.step(actions.numpy())
 
-            old_observation_batch = torch.cat(old_observation_batch, torch.tensor(last_observations))
-            action_batch = torch.cat(action_batch, actions)
-            new_observation_batch = torch.cat(new_observation_batch, torch.tensor(new_observations))
-            reward_batch = torch.cat(reward_batch, torch.tensor(rewards))
+            old_observation_batch = torch.cat((old_observation_batch, observation_preprocessor(last_observations).image))
+            action_batch = torch.cat((action_batch, actions))
+            new_observation_batch = torch.cat((new_observation_batch, observation_preprocessor(new_observations).image))
+            reward_batch = torch.cat((reward_batch, torch.tensor(rewards, dtype=torch.float)))
 
         optimizer.zero_grad()
         predicted_observations, predicted_rewards = environment_model(old_observation_batch, action_batch)
-        observation_loss = nn.functional.mse_loss(predicted_observations, new_observation_batch)
-        reward_loss = nn.functional.mse_loss(predicted_rewards, reward_batch)
+
+        transposed_new_observation_batch = torch.transpose(torch.transpose(new_observation_batch, 1, 3), 2, 3)
+        observation_loss = nn.functional.mse_loss(predicted_observations, transposed_new_observation_batch)
+
+        reward_loss = nn.functional.mse_loss(predicted_rewards.squeeze(), reward_batch)
         total_loss = observation_loss * observation_weight + reward_loss * reward_weight
         total_loss.backward()
         optimizer.step()
@@ -85,7 +88,7 @@ def train_environment_model(environment_class, agent_name, n_environments=16, se
 
         if n_updates % log_interval == 0:
             batch_end_time = time.time()
-            fps = additional_frames / batch_end_time - batch_start_time
+            fps = additional_frames / (batch_end_time - batch_start_time)
             duration = int(time.time() - total_start_time)
 
             header = ["update", "frames", "FPS", "duration"]
@@ -93,6 +96,9 @@ def train_environment_model(environment_class, agent_name, n_environments=16, se
 
             header += ["observation_loss", "reward_loss", "total_loss"]
             data += [observation_loss.item(), reward_loss.item(), total_loss.item()]
+
+            logger.info(
+                "U {} | F {:06} | FPS {:04.0f} | D {} | obsL {:.3f} | rewL {:.3f} | L {:.3f}".format(*data))
 
             if n_frames == additional_frames:
                 csv_writer.writerow(header)
@@ -121,6 +127,8 @@ class EnvironmentModel(nn.Module):
 
         input_depth = self.observation_layers + self.n_actions
 
+        print(input_depth, self.n_actions, self.observation_width, self.observation_height, self.observation_layers)
+
         self.convolution1 = nn.Sequential(
             nn.Conv2d(input_depth, 64, kernel_size=4, stride=4, padding=1),
             nn.ReLU(),
@@ -136,17 +144,17 @@ class EnvironmentModel(nn.Module):
         self.deconvolution = nn.ConvTranspose2d(64, 3, kernel_size=4, stride=4, padding=0)
 
         self.reward_convolution = nn.Sequential(
-            nn.Conv2d(64, 64, kernel_size=3),
-            nn.MaxPool2d(2),
+            nn.Conv2d(64, 64, kernel_size=2),
+            # nn.MaxPool2d(2),
             nn.ReLU(),
-            nn.Conv2d(64, 64, kernel_size=3),
-            nn.MaxPool2d(2),
-            nn.ReLU()
+            # nn.Conv2d(64, 64, kernel_size=3),
+            # nn.MaxPool2d(2),
+            # nn.ReLU()
         )
 
-        reward_convolution_out_shape = self.reward_convolution(
-            self.convolution1(torch.zeros(1, input_depth, observation_shape[0], observation_shape[1]))
-        )
+        test_convolution = self.convolution1(torch.zeros(1, input_depth, self.observation_width, self.observation_height))
+        reward_convolution_out_shape = self.reward_convolution(test_convolution)
+
         reward_convolution_out_size = int(np.prod(reward_convolution_out_shape.size()))
 
         self.reward_predictor = nn.Sequential(
@@ -158,17 +166,18 @@ class EnvironmentModel(nn.Module):
     def forward(self, observations, actions):
         batch_size = actions.size()[0]
 
+        transposed_observations = torch.transpose(torch.transpose(observations, 1, 3), 2, 3)
         action_encoding_planes = torch.FloatTensor(batch_size, self.n_actions, self.observation_width, self.observation_height).zero_()
         action_encoding_planes[range(batch_size), actions] = 1.0
-        input = torch.cat((observations, action_encoding_planes), dim=1)
+        stacked_input = torch.cat((transposed_observations, action_encoding_planes), dim=1)
 
-        convolution1 = self.convolution1(input)
+        convolution1 = self.convolution1(stacked_input)
         convolution2 = self.convolution2(convolution1)
-        sum = convolution1 + convolution2
+        convolution_sum = convolution1 + convolution2
 
-        predicted_observation = self.deconvolution(sum)
+        predicted_observation = self.deconvolution(convolution_sum)
 
-        reward_convolution = self.reward_convolution(sum)
+        reward_convolution = self.reward_convolution(convolution_sum)
         predicted_reward = self.reward_predictor(reward_convolution.view(batch_size, -1))
 
         return predicted_observation, predicted_reward

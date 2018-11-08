@@ -10,6 +10,8 @@ import sys
 from thesis.preprocessor import MyObssPreprocessor
 from thesis.acmodel import MyACModel
 from thesis.wrappers import environment_name
+from thesis.i2a_model import I2AModel
+from thesis.i2a_algorithm import I2Algorithm
 
 try:
     import gym_minigrid
@@ -20,36 +22,38 @@ import utils
 from model import ACModel
 
 
-def train(environment,  # name of the environment to train on (REQUIRED)
-          algorithm,  # class
-          seed=1,  # random seed (default: 1)
-          procs=16,  # number of processes (default: 16)
-          frames=10 ** 7,  # number of frames of training (default: 10e7)
-          log_interval=1,  # number of updates between two logs (default: 1)
-          save_interval=10,  # number of updates between two saves (default: 0, 0 means no saving)
-          frames_per_proc=None,  # number of frames per process before update (default: 5 for A2C and 128 for PPO)
-          discount=0.99,  # discount factor (default: 0.99)
-          lr=7e-4,  # learning rate for optimizers (default: 7e-4)
-          gae_lambda=0.95,  # lambda coefficient in GAE formula (default: 0.95, 1 means no gae)
-          entropy_coef=0.01,  # entropy term coefficient (default: 0.01)
-          value_loss_coef=0.5,  # value loss term coefficient (default: 0.5)
-          max_grad_norm=0.5,  # maximum norm of gradient (default: 0.5)
-          recurrence=1,  # number of steps the gradient is propagated back in time (default: 1)
-          optim_eps=1e-5,  # Adam and RMSprop optimizer epsilon (default: 1e-5)
-          optim_alpha=0.99,  # RMSprop optimizer apha (default: 0.99)
-          clip_eps=0.2,  # clipping epsilon for PPO (default: 0.2)
-          epochs=4,  # number of epochs for PPO (default: 4)
-          batch_size=256,  # batch size for PPO (default: 256)
-          no_instr=False,  # don't use instructions in the model
-          no_mem=False,  # don't use memory in the model
-          note=None, # name suffix
-          tensorboard=True):
+def train_i2a_model(environment_class,  # name of the environment to train on (REQUIRED)
+                    environment_model_name,  # class
+                    algorithm,
+                    imagination_steps,
+                    seed=1,  # random seed (default: 1)
+                    procs=16,  # number of processes (default: 16)
+                    frames=10 ** 7,  # number of frames of training (default: 10e7)
+                    log_interval=1,  # number of updates between two logs (default: 1)
+                    save_interval=10,  # number of updates between two saves (default: 0, 0 means no saving)
+                    frames_per_proc=None,  # number of frames per process before update (default: 5 for A2C and 128 for PPO)
+                    discount=0.99,  # discount factor (default: 0.99)
+                    lr=7e-4,  # learning rate for optimizers (default: 7e-4)
+                    gae_lambda=0.95,  # lambda coefficient in GAE formula (default: 0.95, 1 means no gae)
+                    entropy_coef=0.01,  # entropy term coefficient (default: 0.01)
+                    value_loss_coef=0.5,  # value loss term coefficient (default: 0.5)
+                    max_grad_norm=0.5,  # maximum norm of gradient (default: 0.5)
+                    recurrence=1,  # number of steps the gradient is propagated back in time (default: 1)
+                    optim_eps=1e-5,  # Adam and RMSprop optimizer epsilon (default: 1e-5)
+                    optim_alpha=0.99,  # RMSprop optimizer apha (default: 0.99)
+                    clip_eps=0.2,  # clipping epsilon for PPO (default: 0.2)
+                    epochs=4,  # number of epochs for PPO (default: 4)
+                    batch_size=256,  # batch size for PPO (default: 256)
+                    no_instr=False,  # don't use instructions in the model
+                    no_mem=False,  # don't use memory in the model
+                    note=None,  # name suffix
+                    tensorboard=True):
     saved_arguments = locals()
 
     date_suffix = datetime.datetime.now().strftime("%y-%m-%d-%H-%M-%S")
     note = note + "_" if note else ""
 
-    model_name = "A2C_{}{}_s{}_{}".format(note, environment_name(environment), seed, date_suffix)
+    model_name = "I2A-{}_{}{}_s{}_{}".format(imagination_steps, note, environment_name(environment_class), seed, date_suffix)
     model_dir = utils.get_model_dir(model_name)
 
     # Define logger, CSV writer and Tensorboard writer
@@ -78,10 +82,16 @@ def train(environment,  # name of the environment to train on (REQUIRED)
     total_start_time = time.time()
     update = status["update"]
 
-    acmodel = MyACModel(environment, use_memory=not no_mem)
-    algorithm.load_acmodel(acmodel)
-    logger.info("{}\n".format(acmodel))
-    logger.info("Model uses carrying: {}\n".format(acmodel.use_carrying))
+    environment_model = utils.load_model(utils.get_model_dir(environment_model_name))
+    i2a_model = I2AModel(environment_class, environment_model, imagination_steps)
+
+    algorithm.load_acmodel(i2a_model)
+
+    logger.info("Using environment model: {}\n".format(environment_model_name))
+    logger.info("{}\n".format(environment_model))
+
+    logger.info("Agent architecture:\n")
+    logger.info("{}\n".format(i2a_model))
 
     while num_frames < frames:
         # Update model parameters
@@ -108,11 +118,11 @@ def train(environment,  # name of the environment to train on (REQUIRED)
             data += rreturn_per_episode.values()
             header += ["num_frames_" + key for key in num_frames_per_episode.keys()]
             data += num_frames_per_episode.values()
-            header += ["entropy", "value", "policy_loss", "value_loss", "grad_norm"]
-            data += [logs["entropy"], logs["value"], logs["policy_loss"], logs["value_loss"], logs["grad_norm"]]
+            header += ["entropy", "value", "policy_loss", "value_loss", "grad_norm", "distillation_loss"]
+            data += [logs["entropy"], logs["value"], logs["policy_loss"], logs["value_loss"], logs["grad_norm"], logs["distillation_loss"]]
 
             logger.info(
-                "U {} | F {:06} | FPS {:04.0f} | D {} | rR:x̄σmM {:.2f} {:.2f} {:.2f} {:.2f} | F:x̄σmM {:.1f} {:.1f} {} {} | H {:.3f} | V {:.3f} | pL {:.3f} | vL {:.3f} | ∇ {:.3f}"
+                "U {} | F {:06} | FPS {:04.0f} | D {} | rR:x̄σmM {:.2f} {:.2f} {:.2f} {:.2f} | F:x̄σmM {:.1f} {:.1f} {} {} | H {:.3f} | V {:.3f} | pL {:.3f} | vL {:.3f} | ∇ {:.3f} | dL {:.3f}"
                     .format(*data))
 
             header += ["return_" + key for key in return_per_episode.keys()]
