@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="601afdaf-f1c2-43ab-9c6c-f8fb17014353" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/thesis/introspect_i2a.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thesis/enjoy_programmatically.py" beforeDir="false" afterPath="$PROJECT_DIR$/thesis/enjoy_programmatically.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thesis/i2a_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/thesis/i2a_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thesis/runs.py" beforeDir="false" afterPath="$PROJECT_DIR$/thesis/runs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/agent.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,11 +18,12 @@
     <session id="1964558925">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -29,25 +31,26 @@
           <entry key="DESKTOP-9GF3NUH" value="1" />
           <entry key="csv" value="2" />
           <entry key="log" value="20" />
-          <entry key="py" value="247" />
+          <entry key="py" value="260" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="23" />
-          <entry key="Python" value="247" />
+          <entry key="Python" value="260" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="Python Console" value="90" />
           <entry key="dummy" value="16" />
-          <entry key="py" value="13283" />
+          <entry key="py" value="15388" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="16" />
-          <entry key="Python" value="13283" />
+          <entry key="Python" value="15478" />
         </counts>
       </usages-collector>
     </session>
@@ -71,16 +74,73 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/thesis/enjoy_programmatically.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="75" selection-start-line="75" selection-end-line="75" />
+            <state relative-caret-position="330">
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
               <folding>
                 <element signature="e#24#39#0" expanded="true" />
-                <marker date="1541682641465" expanded="true" signature="1290:1990" ph="..." />
-                <marker date="1541682641465" expanded="true" signature="1435:1990" ph="..." />
-                <marker date="1541682641465" expanded="true" signature="1819:1990" ph="..." />
+                <marker date="1541781655555" expanded="true" signature="1373:2073" ph="..." />
+                <marker date="1541781655555" expanded="true" signature="1518:2073" ph="..." />
+                <marker date="1541781655555" expanded="true" signature="1902:2073" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../gym-minigrid/gym_minigrid/minigrid.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="509" column="8" selection-start-line="509" selection-start-column="8" selection-end-line="509" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thesis/i2a_model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2108">
+              <caret line="132" column="57" selection-start-line="132" selection-start-column="57" selection-end-line="132" selection-end-column="57" />
+              <folding>
+                <marker date="1541773107933" expanded="true" signature="3257:3263" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/thesis/introspect_i2a.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="678">
+              <caret line="70" column="25" lean-forward="true" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
+              <folding>
+                <element signature="e#24#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../gym-minigrid/gym_minigrid/rendering.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="492">
+              <caret line="59" column="68" selection-start-line="59" selection-start-column="68" selection-end-line="59" selection-end-column="68" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/agent.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="69" lean-forward="true" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -97,9 +157,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>reward</find>
-      <find>OBJECT_TO_IDX</find>
-      <find>'empty'</find>
       <find>.carryin</find>
       <find>def encode</find>
       <find>forwa</find>
@@ -127,6 +184,9 @@
       <find>fps =</find>
       <find>self</find>
       <find>log_t</find>
+      <find>rgb</find>
+      <find>ACTION_</find>
+      <find>setpi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -150,7 +210,6 @@
         <option value="$PROJECT_DIR$/utils/general.py" />
         <option value="$PROJECT_DIR$/thesis/preprocessor.py" />
         <option value="$PROJECT_DIR$/utils/format.py" />
-        <option value="$PROJECT_DIR$/../gym-minigrid/gym_minigrid/minigrid.py" />
         <option value="$PROJECT_DIR$/torch_rl/algos/base.py" />
         <option value="$PROJECT_DIR$/torch_rl/utils/penv.py" />
         <option value="$PROJECT_DIR$/thesis/wrappers.py" />
@@ -162,9 +221,13 @@
         <option value="$PROJECT_DIR$/thesis/i2a.py" />
         <option value="$PROJECT_DIR$/thesis/i2a_train.py" />
         <option value="$PROJECT_DIR$/thesis/i2a_algorithm.py" />
-        <option value="$PROJECT_DIR$/thesis/i2a_model.py" />
         <option value="$PROJECT_DIR$/thesis/runs.py" />
+        <option value="$PROJECT_DIR$/thesis/i2a_model.py" />
+        <option value="$PROJECT_DIR$/utils/agent.py" />
         <option value="$PROJECT_DIR$/thesis/enjoy_programmatically.py" />
+        <option value="$PROJECT_DIR$/../gym-minigrid/gym_minigrid/minigrid.py" />
+        <option value="$PROJECT_DIR$/../gym-minigrid/gym_minigrid/rendering.py" />
+        <option value="$PROJECT_DIR$/thesis/introspect_i2a.py" />
       </list>
     </option>
   </component>
@@ -178,7 +241,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -216,6 +278,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -241,7 +304,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.enjoy_programmatically">
+  <component name="RunManager" selected="Python.introspect_i2a">
     <configuration name="enjoy_programmatically" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ppo-a2c-thesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -255,6 +318,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/thesis/enjoy_programmatically.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="introspect_i2a" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ppo-a2c-thesis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/thesis" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/thesis/introspect_i2a.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -309,9 +393,11 @@
       <item itemvalue="Python.runs" />
       <item itemvalue="Python.enjoy_programmatically" />
       <item itemvalue="Python.wrappers" />
+      <item itemvalue="Python.introspect_i2a" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.introspect_i2a" />
         <item itemvalue="Python.enjoy_programmatically" />
         <item itemvalue="Python.runs" />
         <item itemvalue="Python.wrappers" />
@@ -333,6 +419,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.29557428" />
@@ -343,7 +430,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.29689175" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.2454448" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -357,22 +444,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/storage_old/EmptyEnv16x16_A2CAlgo_seed1_18-11-05-13-43-15/log.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage_old/UnlockPickup_A2CAlgo_seed1_18-11-05-15-12-51/log.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage_old/FullyBroad-SmallUnlock_A2CAlgo_seed1_18-11-05-22-23-47/log.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/format.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage_old/EmptyEnv_A2CAlgo_seed1_18-11-05-12-30-43/log.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -422,13 +493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/agent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage_old/Unlock_A2CAlgo_seed1_18-11-05-14-38-23/log.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -441,6 +505,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1158">
           <caret line="92" column="28" selection-start-line="92" selection-start-column="28" selection-end-line="92" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1541609377546" expanded="true" signature="182:581" ph="..." />
+            <marker date="1541609377546" expanded="true" signature="628:978" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -477,13 +546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
           <caret line="288" column="8" selection-start-line="288" selection-start-column="8" selection-end-line="288" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../gym-minigrid/gym_minigrid/minigrid.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="414" column="8" selection-start-line="414" selection-start-column="8" selection-end-line="414" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -536,20 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
           <caret line="171" selection-start-line="171" selection-end-line="171" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1080749958/torch/_C/_TensorBase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="1384" column="8" selection-start-line="1384" selection-start-column="8" selection-end-line="1384" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1080749958/torch/_C/_VariableFunctions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-97">
-          <caret line="3411" column="8" selection-start-line="3411" selection-start-column="8" selection-end-line="3411" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -607,13 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thesis/i2a_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="113" column="66" selection-start-line="113" selection-start-column="66" selection-end-line="113" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/general.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -634,6 +675,34 @@
     <entry file="file://$PROJECT_DIR$/../gym-minigrid/gym_minigrid/envs/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1080749958/torch/_C/_TensorBase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="2952" column="8" selection-start-line="2952" selection-start-column="8" selection-end-line="2952" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1080749958/torch/_C/_VariableFunctions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6475" column="8" selection-start-line="6475" selection-start-column="8" selection-end-line="6475" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1080749958/PyQt5/QtGui/QPainter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="362" column="8" selection-start-line="362" selection-start-column="8" selection-end-line="362" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1080749958/PyQt5/QtWidgets/QMainWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/thesis/runs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -649,15 +718,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/utils/agent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="69" lean-forward="true" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gym-minigrid/gym_minigrid/rendering.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="59" column="68" selection-start-line="59" selection-start-column="68" selection-end-line="59" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thesis/i2a_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2108">
+          <caret line="132" column="57" selection-start-line="132" selection-start-column="57" selection-end-line="132" selection-end-column="57" />
+          <folding>
+            <marker date="1541773107933" expanded="true" signature="3257:3263" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gym-minigrid/gym_minigrid/minigrid.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="509" column="8" selection-start-line="509" selection-start-column="8" selection-end-line="509" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/thesis/enjoy_programmatically.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        <state relative-caret-position="330">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
           <folding>
             <element signature="e#24#39#0" expanded="true" />
-            <marker date="1541682641465" expanded="true" signature="1290:1990" ph="..." />
-            <marker date="1541682641465" expanded="true" signature="1435:1990" ph="..." />
-            <marker date="1541682641465" expanded="true" signature="1819:1990" ph="..." />
+            <marker date="1541781655555" expanded="true" signature="1373:2073" ph="..." />
+            <marker date="1541781655555" expanded="true" signature="1518:2073" ph="..." />
+            <marker date="1541781655555" expanded="true" signature="1902:2073" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thesis/introspect_i2a.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="678">
+          <caret line="70" column="25" lean-forward="true" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
+          <folding>
+            <element signature="e#24#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

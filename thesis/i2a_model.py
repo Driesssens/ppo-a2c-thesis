@@ -67,11 +67,14 @@ class I2AModel(nn.Module, torch_rl.ACModel):
         object.__setattr__(self, "environment_model", environment_model)
         object.__setattr__(self, "imagination_policy", imagination_policy)
 
-    def forward(self, obs):
+    def forward(self, obs, introspect=False):
         convolutions = self.image_conv(torch.transpose(torch.transpose(obs.image, 1, 3), 2, 3))
         flat_convolutions = convolutions.reshape(convolutions.shape[0], -1)
 
-        encoded_rollouts = self.rollouts_batch(obs.image)
+        if introspect:
+            encoded_rollouts, predicted_actions, predicted_observations, predicted_rewards = self.rollouts_batch(obs.image, introspect=True)
+        else:
+            encoded_rollouts = self.rollouts_batch(obs.image)
 
         both_pathways = torch.cat((flat_convolutions, encoded_rollouts), dim=1)
 
@@ -80,9 +83,12 @@ class I2AModel(nn.Module, torch_rl.ACModel):
 
         values = self.critic(both_pathways).squeeze(1)
 
-        return distributions, values
+        if introspect:
+            return distributions, values, predicted_actions, predicted_observations, predicted_rewards
+        else:
+            return distributions, values
 
-    def rollouts_batch(self, observations):
+    def rollouts_batch(self, observations, introspect=False):
         batch_size = observations.size()[0]
         observations_shape = observations.size()[1:]
 
@@ -96,7 +102,13 @@ class I2AModel(nn.Module, torch_rl.ACModel):
         actions = torch.tensor(np.tile(np.arange(0, self.n_actions, dtype=np.int64), batch_size))
         predicted_observations, predicted_rewards = [], []
 
+        if introspect:
+            predicted_actions = []
+
         for step_idx in range(self.imagination_steps):
+            if introspect:
+                predicted_actions.append(actions)
+
             new_observations, new_rewards = self.environment_model(old_observations, actions)
             predicted_observations.append(new_observations.detach())
             predicted_rewards.append(new_rewards.detach())
@@ -114,10 +126,13 @@ class I2AModel(nn.Module, torch_rl.ACModel):
             distributions, _, _ = self.imagination_policy(dictlist, None)
             actions = distributions.sample()
 
-        predicted_observations = torch.stack(predicted_observations)
-        predicted_rewards = torch.stack(predicted_rewards)
-        encoded = self.encoder(predicted_observations, predicted_rewards)
-        return encoded.view(batch_size, -1)
+        encoded = self.encoder(torch.stack(predicted_observations), torch.stack(predicted_rewards)).view(batch_size, -1)
+
+        if introspect:
+            transposed = [torch.transpose(torch.transpose(observation, 2, 3), 1, 3) for observation in predicted_observations]
+            return encoded, predicted_actions, transposed, predicted_rewards
+        else:
+            return encoded
 
 
 class RolloutEncoder(nn.Module):

@@ -14,6 +14,7 @@ from thesis.environments import SmallUnlock8x8
 from thesis.wrappers import MyFullyObservableWrapperBroadcast, MyFullyObservableWrapper, MyFullyObservableWrapperEgo, ReducedActionWrapper, UndiscountedRewards, HastyRewards
 from gym_minigrid.envs import EmptyEnv8x8
 
+
 def enjoy(environment, model, seed=0, argmax=False, pause=0.1):
     utils.seed(seed)
 
@@ -37,6 +38,7 @@ def enjoy(environment, model, seed=0, argmax=False, pause=0.1):
 
         time.sleep(pause)
         renderer = environment.render("human")
+        renderer.window.update_imagination_display([[1, 2, 3], 2, 3], None, None)
 
         action = agent.get_action(obs)
         obs, reward, done, _ = environment.step(action)

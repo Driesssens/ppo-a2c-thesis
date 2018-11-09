@@ -1,6 +1,7 @@
 import torch
-
+from gym_minigrid.minigrid import Grid
 import utils
+import time
 
 class Agent:
     """An abstraction of the behavior of an agent. The agent is able:
@@ -17,6 +18,8 @@ class Agent:
         if self.model.recurrent:
             self.memories = torch.zeros(self.num_envs, self.model.memory_size)
 
+        self.number = 0
+
     def get_actions(self, obss):
         preprocessed_obss = self.preprocess_obss(obss)
 
@@ -24,7 +27,15 @@ class Agent:
             if self.model.recurrent:
                 dist, _, self.memories = self.model(preprocessed_obss, self.memories)
             else:
-                dist, _ = self.model(preprocessed_obss)
+                dist, _, x, y, z = self.model(preprocessed_obss, introspect=True)
+
+                if self.number == 7:
+                    Grid.decode(y[0][0].round().numpy()).render_human()
+                    print(len(x), len(y), len(z))
+                    print(y[0].shape, z[0].shape)
+                    print(x, y, z)
+                self.number += 1
+
 
         if self.argmax:
             actions = dist.probs.max(1, keepdim=True)[1]
