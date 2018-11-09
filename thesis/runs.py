@@ -66,12 +66,12 @@ def test_i2a_empty():
     environment_class = [EmptyEnv8x8, MyFullyObservableWrapperEgo, HastyRewards]
     environment_model_name = "EM_Haste-Ego-EmptyEnv8x8_s0_18-11-07-23-10-39"
     algorithm = I2Algorithm(environment_class)
-    train_i2a_model(environment_class, environment_model_name, algorithm, 1, tensorboard=False)
+    train_i2a_model(environment_class, environment_model_name, algorithm, 3, tensorboard=True)
 
 
 def test_i2a_unlock():
-    environment_class = [SmallUnlock8x8, MyFullyObservableWrapperEgo, HastyRewards]
-    environment_model_name = "EM_Haste-Ego-SmallUnlock8x8_s0_18-11-07-23-11-33"
+    environment_class = [SmallUnlock8x8, MyFullyObservableWrapperEgo]
+    environment_model_name = "EM_Ego-SmallUnlock8x8_s0_18-11-07-23-35-55"
     algorithm = I2Algorithm(environment_class)
     train_i2a_model(environment_class, environment_model_name, algorithm, 1)
 

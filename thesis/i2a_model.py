@@ -109,7 +109,9 @@ class I2AModel(nn.Module, torch_rl.ACModel):
             old_observations = torch.transpose(torch.transpose(new_observations, 2, 3), 1, 3)
 
             # select actions
-            distributions, _, _ = self.imagination_policy(old_observations, None)
+            dictlist = torch_rl.DictList()
+            dictlist.image = old_observations
+            distributions, _, _ = self.imagination_policy(dictlist, None)
             actions = distributions.sample()
 
         predicted_observations = torch.stack(predicted_observations)

@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="601afdaf-f1c2-43ab-9c6c-f8fb17014353" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/thesis/i2a_algorithm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thesis/i2a_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thesis/i2a_train.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thesis/enjoy_programmatically.py" beforeDir="false" afterPath="$PROJECT_DIR$/thesis/enjoy_programmatically.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thesis/environment_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/thesis/environment_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thesis/environments.py" beforeDir="false" afterPath="$PROJECT_DIR$/thesis/environments.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thesis/i2a_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/thesis/i2a_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thesis/runs.py" beforeDir="false" afterPath="$PROJECT_DIR$/thesis/runs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thesis/train_programmatically.py" beforeDir="false" afterPath="$PROJECT_DIR$/thesis/train_programmatically.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,10 +17,11 @@
     <session id="1964558925">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -33,101 +29,58 @@
           <entry key="DESKTOP-9GF3NUH" value="1" />
           <entry key="csv" value="2" />
           <entry key="log" value="20" />
-          <entry key="py" value="241" />
+          <entry key="py" value="247" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="23" />
-          <entry key="Python" value="241" />
+          <entry key="Python" value="247" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="16" />
-          <entry key="py" value="13047" />
+          <entry key="py" value="13283" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="16" />
-          <entry key="Python" value="13047" />
+          <entry key="Python" value="13283" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/thesis/runs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="79" column="19" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
+            <state relative-caret-position="17">
+              <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
-                <marker date="1541653778428" expanded="true" signature="582:583" ph="..." />
-                <marker date="1541653778428" expanded="true" signature="582:587" ph="..." />
-                <marker date="1541653778428" expanded="true" signature="869:3035" ph="..." />
-                <marker date="1541653778428" expanded="true" signature="1436:3035" ph="..." />
-                <marker date="1541653778428" expanded="true" signature="1941:3035" ph="..." />
-                <marker date="1541653778428" expanded="true" signature="2418:3035" ph="..." />
+                <marker date="1541672370639" expanded="true" signature="582:583" ph="..." />
+                <marker date="1541672370639" expanded="true" signature="582:587" ph="..." />
+                <marker date="1541672370639" expanded="true" signature="869:3014" ph="..." />
+                <marker date="1541672370639" expanded="true" signature="1436:3014" ph="..." />
+                <marker date="1541672370639" expanded="true" signature="1941:3014" ph="..." />
+                <marker date="1541672370639" expanded="true" signature="2418:3014" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thesis/i2a_algorithm.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/thesis/enjoy_programmatically.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="67" column="34" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#12#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thesis/i2a_model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="65" column="74" selection-start-line="65" selection-start-column="74" selection-end-line="65" selection-end-column="74" />
-              <folding>
-                <element signature="e#0#12#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thesis/acmodel.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="120" column="21" selection-start-line="120" selection-start-column="21" selection-end-line="120" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#12#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/general.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/thesis/i2a_train.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="99" selection-start-line="99" selection-end-line="99" />
+            <state relative-caret-position="780">
+              <caret line="75" selection-start-line="75" selection-end-line="75" />
               <folding>
                 <element signature="e#24#39#0" expanded="true" />
+                <marker date="1541682641465" expanded="true" signature="1290:1990" ph="..." />
+                <marker date="1541682641465" expanded="true" signature="1435:1990" ph="..." />
+                <marker date="1541682641465" expanded="true" signature="1819:1990" ph="..." />
               </folding>
             </state>
           </provider>
@@ -203,20 +156,20 @@
         <option value="$PROJECT_DIR$/thesis/wrappers.py" />
         <option value="$PROJECT_DIR$/thesis/train_programmatically.py" />
         <option value="$PROJECT_DIR$/thesis/acmodel.py" />
-        <option value="$PROJECT_DIR$/thesis/enjoy_programmatically.py" />
         <option value="$PROJECT_DIR$/../gym-minigrid/gym_minigrid/envs/empty.py" />
         <option value="$PROJECT_DIR$/thesis/environments.py" />
         <option value="$PROJECT_DIR$/thesis/environment_model.py" />
         <option value="$PROJECT_DIR$/thesis/i2a.py" />
         <option value="$PROJECT_DIR$/thesis/i2a_train.py" />
-        <option value="$PROJECT_DIR$/thesis/i2a_model.py" />
         <option value="$PROJECT_DIR$/thesis/i2a_algorithm.py" />
+        <option value="$PROJECT_DIR$/thesis/i2a_model.py" />
         <option value="$PROJECT_DIR$/thesis/runs.py" />
+        <option value="$PROJECT_DIR$/thesis/enjoy_programmatically.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1057" />
   </component>
@@ -288,7 +241,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.runs">
+  <component name="RunManager" selected="Python.enjoy_programmatically">
     <configuration name="enjoy_programmatically" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ppo-a2c-thesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -359,8 +312,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.runs" />
         <item itemvalue="Python.enjoy_programmatically" />
+        <item itemvalue="Python.runs" />
         <item itemvalue="Python.wrappers" />
       </list>
     </recent_temporary>
@@ -382,15 +335,15 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.29557428" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.29557428" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" weight="0.26688102" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.2647374" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.3290461" />
       <window_info anchor="bottom" id="Python Console" order="2" weight="0.3290461" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.29689175" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.29689175" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -404,12 +357,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/storage_old/Fully-Unlock_A2CAlgo_seed1_18-11-05-17-56-30/log.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage_old/Fully-EmptyEnv_A2CAlgo_seed1_18-11-05-17-46-36/log.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage_old/EmptyEnv16x16_A2CAlgo_seed1_18-11-05-13-43-15/log.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -466,21 +413,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/torch/tensor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -503,17 +441,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1158">
           <caret line="92" column="28" selection-start-line="92" selection-start-column="28" selection-end-line="92" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-            <marker date="1541609377546" expanded="true" signature="182:581" ph="..." />
-            <marker date="1541609377546" expanded="true" signature="628:978" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage/EM_Haste-Ego-EmptyEnv10x10_s0_18-11-07-19-38-14/log.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/EM_Haste-Ego-EmptyEnv10x10_s0_18-11-07-19-38-14/log.log" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/torch/nn/modules/pooling.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1178">
@@ -542,16 +473,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thesis/preprocessor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/torch/nn/modules/conv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
@@ -566,18 +487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thesis/enjoy_programmatically.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="64" column="15" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="15" />
-          <folding>
-            <element signature="e#24#39#0" expanded="true" />
-            <marker date="1541625211917" expanded="true" signature="1246:1563" ph="..." />
-            <marker date="1541625211917" expanded="true" signature="1391:1563" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/thesis/environments.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -589,30 +498,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/torch_rl/algos/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="83" column="29" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/torch/nn/modules/loss.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -632,9 +522,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1096">
           <caret line="122" column="37" lean-forward="true" selection-start-line="122" selection-start-column="37" selection-end-line="122" selection-end-column="37" />
-          <folding>
-            <element signature="e#24#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -642,16 +529,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/general.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -659,9 +536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
           <caret line="171" selection-start-line="171" selection-end-line="171" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -690,10 +564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="57" column="18" lean-forward="true" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-            <marker date="1541416860679" expanded="true" signature="1000:1148" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -711,58 +581,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thesis/acmodel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="120" column="21" selection-start-line="120" selection-start-column="21" selection-end-line="120" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thesis/i2a_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="65" column="74" selection-start-line="65" selection-start-column="74" selection-end-line="65" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/thesis/i2a_train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
+        <state relative-caret-position="1376">
           <caret line="99" selection-start-line="99" selection-end-line="99" />
-          <folding>
-            <element signature="e#24#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/thesis/i2a_algorithm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="67" column="34" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
+        <state relative-caret-position="393">
+          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thesis/preprocessor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-238" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thesis/acmodel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="120" column="21" selection-start-line="120" selection-start-column="21" selection-end-line="120" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thesis/i2a_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="113" column="66" selection-start-line="113" selection-start-column="66" selection-end-line="113" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/general.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/torch_rl/algos/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-146">
+          <caret line="121" column="8" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gym-minigrid/gym_minigrid/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gym-minigrid/gym_minigrid/envs/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thesis/runs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
           <folding>
-            <element signature="e#0#12#0" expanded="true" />
+            <marker date="1541672370639" expanded="true" signature="582:583" ph="..." />
+            <marker date="1541672370639" expanded="true" signature="582:587" ph="..." />
+            <marker date="1541672370639" expanded="true" signature="869:3014" ph="..." />
+            <marker date="1541672370639" expanded="true" signature="1436:3014" ph="..." />
+            <marker date="1541672370639" expanded="true" signature="1941:3014" ph="..." />
+            <marker date="1541672370639" expanded="true" signature="2418:3014" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thesis/runs.py">
+    <entry file="file://$PROJECT_DIR$/thesis/enjoy_programmatically.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="79" column="19" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
+        <state relative-caret-position="780">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <marker date="1541653778428" expanded="true" signature="582:583" ph="..." />
-            <marker date="1541653778428" expanded="true" signature="582:587" ph="..." />
-            <marker date="1541653778428" expanded="true" signature="869:3035" ph="..." />
-            <marker date="1541653778428" expanded="true" signature="1436:3035" ph="..." />
-            <marker date="1541653778428" expanded="true" signature="1941:3035" ph="..." />
-            <marker date="1541653778428" expanded="true" signature="2418:3035" ph="..." />
+            <element signature="e#24#39#0" expanded="true" />
+            <marker date="1541682641465" expanded="true" signature="1290:1990" ph="..." />
+            <marker date="1541682641465" expanded="true" signature="1435:1990" ph="..." />
+            <marker date="1541682641465" expanded="true" signature="1819:1990" ph="..." />
           </folding>
         </state>
       </provider>

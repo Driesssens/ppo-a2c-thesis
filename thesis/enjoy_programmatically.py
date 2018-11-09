@@ -10,9 +10,9 @@ except ImportError:
     pass
 
 import utils
-from thesis.environments import SmallUnlock
+from thesis.environments import SmallUnlock8x8
 from thesis.wrappers import MyFullyObservableWrapperBroadcast, MyFullyObservableWrapper, MyFullyObservableWrapperEgo, ReducedActionWrapper, UndiscountedRewards, HastyRewards
-
+from gym_minigrid.envs import EmptyEnv8x8
 
 def enjoy(environment, model, seed=0, argmax=False, pause=0.1):
     utils.seed(seed)
@@ -62,4 +62,14 @@ def enjoy_wrapped():
     enjoy(environment_class, "A2C_NoMem8x8_Haste-Ego-SmallUnlock_s1_18-11-07-21-56-42")
 
 
-enjoy_wrapped()
+def enjoy_i2a_empty():
+    environment_class = HastyRewards(MyFullyObservableWrapperEgo(EmptyEnv8x8()))
+    enjoy(environment_class, "I2A-3_Haste-Ego-EmptyEnv8x8_s1_18-11-08-07-45-08")
+
+
+def enjoy_i2a_unlocked():
+    environment_class = HastyRewards(MyFullyObservableWrapperEgo(SmallUnlock8x8()))
+    enjoy(environment_class, "I2A-3_Haste-Ego-SmallUnlock8x8_s1_18-11-08-08-04-06")
+
+
+enjoy_i2a_unlocked()
